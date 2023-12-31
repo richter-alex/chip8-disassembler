@@ -1,1 +1,1 @@
-clang disassembler.c -o build/disassembler
+mkdir build && clang disassembler.c -o build/disassembler
