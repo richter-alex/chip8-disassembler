@@ -2,7 +2,13 @@
 #include <stdint.h>
 
 int main(int argc, char **argv) {
-    FILE *rom_file = fopen("./pong.rom", "rb");
+    if (argv[1] == NULL) {
+        printf("ROM file required as argument.\n");
+        return -1;
+    }
+
+    char *filename = argv[1];
+    FILE *rom_file = fopen(filename, "rb");
     fseek(rom_file, 0, SEEK_END);
 
     unsigned int size = ftell(rom_file);
